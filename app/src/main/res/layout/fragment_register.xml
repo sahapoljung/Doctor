@@ -1,14 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+  <!--TooLbar-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolberRegister"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="?attr/actionBarSize"/>
+    <!--Content-->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-</FrameLayout>
+  <LinearLayout
+      android:layout_margin="@dimen/m1"
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+       <!--Name-->
+    <EditText
+        android:id="@+id/edtName"
+        android:inputType="text"
+        android:hint="Name :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+      <!--Surname-->
+    <EditText
+        android:id="@+id/edtSurName"
+        android:inputType="text"
+        android:hint="Surname :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+     <!--Gender-->
+    <RadioGroup
+        android:id="@+id/redGender"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+      <!--Male-->
+      <RadioButton
+          android:id="@+id/redMale"
+          android:layout_weight="1"
+          android:text="Male"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content" />
+      <!--Female-->
+      <RadioButton
+          android:id="@+id/redFemale"
+          android:layout_weight="1"
+          android:text="Female"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content" />
+    </RadioGroup>
+     <!--Height-->
+     <Spinner
+         android:id="@+id/spnHeight"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"/>
+
+      <!--Weight-->
+    <Spinner
+        android:id="@+id/spnWight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+      <!--age-->
+    <Spinner
+        android:id="@+id/spnAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+     <!--User-->
+    <EditText
+        android:id="@+id/edtUesr"
+        android:inputType="text"
+        android:hint="user :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+     <!--Password-->
+    <EditText
+        android:id="@+id/edtPassword"
+        android:inputType="text"
+        android:hint="Password :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+      </LinearLayout>
+    </ScrollView>
+</LinearLayout>
