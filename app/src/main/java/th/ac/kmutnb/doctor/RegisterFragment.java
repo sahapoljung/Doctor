@@ -36,20 +36,7 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-//    Create Toobar
-        Toolbar toolbar = getView().findViewById(R.id.toolberRegister);
-        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.new_register));
-        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);//ทำปุ่มย้อนกลับมุมบน
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true); //ทำปุ่มย้อนกลับมุมบน
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getActivity().getSupportFragmentManager().popBackStack();
-            }//เม็กตอดกดให้กลับ
-        });
-        setHasOptionsMenu(true);
+        creatrToober();
 
 
         // about gender
@@ -94,6 +81,22 @@ public class RegisterFragment extends Fragment {
 
 
     } //Main Method
+
+    private void creatrToober() {
+        //    Create Toobar
+        Toolbar toolbar = getView().findViewById(R.id.toolberRegister);
+        ((MainActivity)getActivity()).setSupportActionBar(toolbar);
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle(getString(R.string.new_register));
+        ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);//ทำปุ่มย้อนกลับมุมบน
+        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true); //ทำปุ่มย้อนกลับมุมบน
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }//เม็กตอดกดให้กลับ
+        });
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
