@@ -27,7 +27,7 @@ public class RegisterFragment extends Fragment {
 //Explicit
     private String nameString ,surnameString , genderString, heightString, weightString,ageString, userString , passwordString ;
 
-    private boolean genderBool = true, heightABoolean = true , weightABoolean = true;
+    private boolean genderBoolean = true, heightABoolean = true , weightABoolean = true;
 
     public RegisterFragment() {
         // Required empty public constructor
@@ -44,7 +44,7 @@ public class RegisterFragment extends Fragment {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                genderBool = false;
+                genderBoolean = false;
                 switch (checkedId) {
                     case R.id.redMale:
                         genderString = "Male";
@@ -98,6 +98,7 @@ public class RegisterFragment extends Fragment {
         setHasOptionsMenu(true);
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -108,7 +109,7 @@ public class RegisterFragment extends Fragment {
         }
         return super.onOptionsItemSelected(item);
     }
-
+// ทั้งหมดสำหรับหารเช็คว่าใส่ครบทุกช่องหรือไม่
     private void checkValue() {
 
 //        Get Value From EditTxet
@@ -119,7 +120,7 @@ public class RegisterFragment extends Fragment {
 
         nameString = nameEditText.getText().toString().trim();
         surnameString = surnameEditText.getText().toString().trim();
-        userString = surnameEditText.getText().toString().trim();
+        userString = userEditText.getText().toString().trim();
         passwordString = passwordEdText.getText().toString().trim();
 
 
@@ -130,8 +131,8 @@ public class RegisterFragment extends Fragment {
 
         if (nameString.isEmpty() || surnameString.isEmpty() || userString.isEmpty() || passwordString.isEmpty()) {
 //            Have Space
-            myAlert.normalDialog("Have Space", "Please Fill Every Blank");
-        } else if (genderBool) {
+            myAlert.normalDialog("Have Space", "Please Faill Every Blank");
+        } else if (genderBoolean) {
 //            Non Choose Gender
             myAlert.normalDialog("Non choose Gender", "Please Choose Male or Female");
 
