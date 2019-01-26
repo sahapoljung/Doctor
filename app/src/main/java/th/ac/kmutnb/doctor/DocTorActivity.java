@@ -28,6 +28,9 @@ public class DocTorActivity extends AppCompatActivity {
 
 
         getUser();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
+        }
 
     }// Main Method
 
