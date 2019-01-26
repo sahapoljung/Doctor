@@ -1,6 +1,9 @@
 package th.ac.kmutnb.doctor;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -41,6 +45,28 @@ public class MainFragment extends Fragment {
 
     }//Main Method
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        try {
+            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
+            String idstring = sharedPreferences.getString("id", "");
+
+            if (!idstring.isEmpty()) {
+                Intent intent = new Intent(getActivity(),DocTorActivity.class);
+                intent.putExtra("id",idstring);
+                startActivity(intent);
+                getActivity().finish();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
     private void loginControllar() {
         Button button = getView().findViewById(R.id.btnLogin);
         button.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +98,19 @@ public class MainFragment extends Fragment {
 
                             if (passwoed.equals(jsonObject.getString("Password"))) {
 
+                                CheckBox checkBox = getView().findViewById(R.id.chbRemember);
+                                if (checkBox.isChecked()) {
+                                    SharedPreferences sharedPreferences = getActivity().getSharedPreferences("User", Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                                    editor.putString("id", jsonObject.getString("id"));
+                                    editor.commit();
 
+                                }
+
+                                Intent intent = new Intent(getActivity(),DocTorActivity.class);
+                                intent.putExtra("id", jsonObject.getString("id"));
+                                startActivity(intent);
+                                getActivity().finish();
                             }
                             else {
                                 myAlert.normalDialog("Password False","Pleaase Try Again Password False" );

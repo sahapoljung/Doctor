@@ -6,4 +6,9 @@
     <string name="user">User :</string>
     <string name="password">password :</string>
     <string name="new_register">New Register</string>
+
+
+    <string name="open">Open Drawer</string>
+    <string name="close">Close Drawer</string>
+
 </resources>
