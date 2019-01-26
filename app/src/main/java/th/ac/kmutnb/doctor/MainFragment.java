@@ -4,12 +4,16 @@ package th.ac.kmutnb.doctor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 
 /**
@@ -47,11 +51,39 @@ public class MainFragment extends Fragment {
                 MyAlert myAlert = new MyAlert(getActivity());
                 String user = userEditText.getText().toString().trim();
                 String passwoed = passwordEditText.getText().toString().trim();
+                String urlPHP = "https://www.androidthai.in.th/sam/getUserWhereUserSam.php";
+                boolean userAbool = true;
 
                 if (user.isEmpty()||passwoed.isEmpty()) {
                     myAlert.normalDialog("Have Space","Please Fill All Ever Blank" );
 
                 } else {
+                    try {
+
+                        GetUserWhereUserThread getUserWhereUserThread = new GetUserWhereUserThread(getActivity());
+                        getUserWhereUserThread.execute(user, urlPHP);
+                        String json = getUserWhereUserThread.get();
+                        Log.d("26JanV1", "json==>" + json);
+                        if (json.equals("null")) {
+                            myAlert.normalDialog("User False","No "+user+" In My Data" );
+                        } else {
+                            JSONArray jsonArray = new JSONArray(json);
+                            JSONObject jsonObject = jsonArray.getJSONObject(0);
+
+                            if (passwoed.equals(jsonObject.getString("Password"))) {
+
+
+                            }
+                            else {
+                                myAlert.normalDialog("Password False","Pleaase Try Again Password False" );
+                            }
+
+                        }//if
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
 
                 }
 
