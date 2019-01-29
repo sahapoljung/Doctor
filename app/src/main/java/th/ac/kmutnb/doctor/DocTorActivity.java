@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -32,7 +35,57 @@ public class DocTorActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().add(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
         }
 
+//        AboutMe controllor
+        aboutMeControllor();
+//        Analysis Controllor
+        analysisControllor();
+
+
+        Logout();
+
+
     }// Main Method
+
+    private void Logout() {
+        final TextView textView = findViewById(R.id.txtLogout);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.FragmentMain, new MainFragment());
+
+                drawerLayout.closeDrawers();
+
+            }
+        });
+    }
+
+    private void analysisControllor() {
+        TextView textView = findViewById(R.id.txtAnalysis);
+
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AnalysisChooseFragment()).commit();
+
+                drawerLayout.closeDrawers();
+
+
+            }
+        });
+
+    }
+
+    private void aboutMeControllor() {
+        final TextView textView = findViewById(R.id.txtAboutMe);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.contentDoctorFragment, new AboutMeFragment()).commit();
+
+                //drawerLayout.closeDrawers();
+            }
+        });
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

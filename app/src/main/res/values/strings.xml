@@ -10,5 +10,8 @@
 
     <string name="open">Open Drawer</string>
     <string name="close">Close Drawer</string>
+    <string name="anlysis">วินิจฉัยโรค</string>
+    <string name="sick">ข้อมูลโรค</string>
+    <string name="info">info</string>
 
 </resources>

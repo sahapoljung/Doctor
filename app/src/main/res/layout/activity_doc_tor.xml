@@ -24,20 +24,141 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+
+    <!--android:layout_gravity="start"-->
     <!--Drawar Manu-->
     <LinearLayout
+        android:padding="@dimen/h3"
         android:background="#ffffff"
         android:layout_gravity="start"
         android:orientation="vertical"
         android:layout_width="320dp"
         android:layout_height="match_parent">
 
+        <!--Title-->
         <TextView
+            android:layout_marginBottom="@dimen/h3"
             android:textStyle="bold"
             android:textSize="@dimen/h1"
             android:text="Main Manu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+
+        <!--About Me-->
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_aboutme"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtAboutMe"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="About Me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--วินัจฉัย-->
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_analysis"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:clickable="true"
+                android:id="@+id/txtAnalysis"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="@string/anlysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--ข้อมูลโรค-->
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_sick"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="@string/sick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--info User -->
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_info"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="Infomation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <!--Log out-->
+        <LinearLayout
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/ic_action_logout"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/txtLogout"
+                android:clickable="true"
+                android:layout_marginLeft="8dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:text="LogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
 
 
     </LinearLayout>

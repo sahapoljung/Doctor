@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AnalysisChooseFragment">
+
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/txtsick1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sick1"
+        android:textSize="@dimen/h1" />
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/txtsick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sick2"
+        android:textSize="@dimen/h1" />
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/txtsick3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sick3"
+        android:textSize="@dimen/h1" />
+
+    <TextView
+        android:clickable="true"
+        android:id="@+id/txtsick4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sick4"
+        android:textSize="@dimen/h1" />
+
+</LinearLayout>
